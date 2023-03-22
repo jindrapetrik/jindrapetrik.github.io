@@ -12,14 +12,29 @@ strong.flags-title {font-weight: bold;}
 .hidden {display:none}
 .filter-flag-title {display:inline-block; width: 50ex;}
 .instruction {padding:5px;}
-.instruction.instruction-flag-noFlashPlayer {background-color: #ccc;}
+.instruction.instruction-flag-noFlashPlayer {background-color: #cccccc;}
 body {font-family: serif;}
 h1, h2, h3, h4, h5 {font-family: sans-serif;}
 .instruction-signature {font-family: "Courier New", monospace; font-size: 1.05em;}
 .filter {font-family: sans-serif; }
 .path {font-weight: bold; color: blue;}
 .path-block {}
-.path-docs {}</style>
+.path-docs {}
+
+
+.night {background-color: red;}
+
+body.standalone {background-color: #f5f5b5;}
+body.standalonenight {background-color: #330;}
+
+body.standalonenight .instruction {background-color: #330; color:white;}
+body.standalonenight .otherdoc {background-color: #330; color:white;}
+body.standalonenight .instruction.instruction-flag-noFlashPlayer {background-color: #333;}
+
+body.standalonenight strong.instruction-name {color: #88f;}
+
+body.standalonenight .path {color: #88f;}
+</style>
 		<script>var txt_filter_hide = "Hide: ";
 var txt_filter_byname = "Find by name: ";
 var txt_filter_order = "Order by: ";
@@ -197,15 +212,15 @@ function init() {
 
 bind(window, "load", init);</script>
 		<meta charset="UTF-8">
-		<meta name="generator" content="JPEXS Free Flash Decompiler v.11.3.0 nightly build 1727">
+		<meta name="generator" content="JPEXS Free Flash Decompiler v.18.4.0">
 		<meta name="description" content="List of all known ActionScript 3 - AVM2 instructions with their operands and stack values">
 		<meta property="og:title" content="AVM2 Instruction list">
 		<meta property="og:type" content="article">
 		<meta property="og:description" content="List of all known ActionScript 3 - AVM2 instructions with their operands and stack values">
-		<meta name="date" content="2021-01-02T08:19:39Z">
+		<meta name="date" content="2023-03-22T19:42:33Z">
 		<title>AVM2 Instruction list</title>
 	</head>
-		<h1>AVM2 Instruction list</h1>
+<body>		<h1>AVM2 Instruction list</h1>
 <span id="js-switcher" class="js"></span>		<ul class="instruction-list">
 			<li class="instruction-item">
 				<div class="instruction instruction-flag-undocumented instruction-flag-unknownOperands instruction-flag-noFlashPlayer instruction-flag-unknownStack"><div class="instruction-signature"><span class="instruction-code">0xEE</span> <strong class="instruction-name">abs_jump</strong> ???
@@ -477,9 +492,13 @@ bind(window, "load", init);</script>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0x88</span> <strong class="instruction-name">coerce_u</strong></div>
+				<div class="instruction instruction-flag-deprecated"><div class="instruction-signature"><span class="instruction-code">0x88</span> <strong class="instruction-name">coerce_u</strong></div>
 				<div class="short-description">Coerce value to unsigned integer</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">..., value</span><span class="stack-to"> ➞ </span><span class="stack-after">..., uintValue</span></span></div>
+				<strong class="flags-title">Flags: </strong><br />
+				<ul class="flags">
+					<li class="flag flag-deprecated">Deprecated</li>
+				</ul>
 				</div>
 			</li>
 			<li class="instruction-item">
@@ -673,7 +692,7 @@ bind(window, "load", init);</script>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction instruction-flag-noFlashPlayer instruction-flag-unknownStack instruction-flag-undocumented"><div class="instruction-signature"><span class="instruction-code">0x5B</span> <strong class="instruction-name">deldescendants</strong> :multinameIndex(U30)</div>
+				<div class="instruction instruction-flag-noFlashPlayer instruction-flag-unknownStack instruction-flag-undocumented"><div class="instruction-signature"><span class="instruction-code">0x5B</span> <strong class="instruction-name">deldescendants</strong> multinameIndex(U30)</div>
 				<div class="short-description">Delete descendants</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values  unknown">???</span></div>
 				<strong class="flags-title">Flags: </strong><br />
@@ -782,17 +801,6 @@ bind(window, "load", init);</script>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction instruction-flag-noFlashPlayer instruction-flag-unknownStack"><div class="instruction-signature"><span class="instruction-code">0x5C</span> <strong class="instruction-name">findpropglobal</strong> property:multinameIndex(U30)</div>
-				<div class="short-description">Search property in global scope</div>
-				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values  unknown">???</span></div>
-				<strong class="flags-title">Flags: </strong><br />
-				<ul class="flags">
-					<li class="flag flag-unknownStack">Unknown stack</li>
-					<li class="flag flag-noFlashPlayer">Not in standard Flash Player</li>
-				</ul>
-				</div>
-			</li>
-			<li class="instruction-item">
 				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0x5D</span> <strong class="instruction-name">findpropstrict</strong> property:multinameIndex(U30)</div>
 				<div class="short-description">Search property in scope stack, error when not found</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">..., [ns], [name]</span><span class="stack-to"> ➞ </span><span class="stack-after">..., obj</span></span></div>
@@ -829,32 +837,32 @@ bind(window, "load", init);</script>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD0</span> <strong class="instruction-name">getlocal_0</strong></div>
+				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD0</span> <strong class="instruction-name">getlocal0</strong></div>
 				<div class="short-description">Get local register 0</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">...</span><span class="stack-to"> ➞ </span><span class="stack-after">..., value</span></span></div>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD1</span> <strong class="instruction-name">getlocal_1</strong></div>
+				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD1</span> <strong class="instruction-name">getlocal1</strong></div>
 				<div class="short-description">Get local register 1</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">...</span><span class="stack-to"> ➞ </span><span class="stack-after">..., value</span></span></div>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD2</span> <strong class="instruction-name">getlocal_2</strong></div>
+				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD2</span> <strong class="instruction-name">getlocal2</strong></div>
 				<div class="short-description">Get local register 2</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">...</span><span class="stack-to"> ➞ </span><span class="stack-after">..., value</span></span></div>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD3</span> <strong class="instruction-name">getlocal_3</strong></div>
+				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD3</span> <strong class="instruction-name">getlocal3</strong></div>
 				<div class="short-description">Get local register 3</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">...</span><span class="stack-to"> ➞ </span><span class="stack-after">..., value</span></span></div>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0x67</span> <strong class="instruction-name">getouterscope</strong> allLevelScopeIndex:scopeIndex(U30)</div>
-				<div class="short-description">Get scope object on all levels</div>
+				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0x67</span> <strong class="instruction-name">getouterscope</strong> scopeIndex(U30)</div>
+				<div class="short-description">Get scope object from outer scope stack</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">...</span><span class="stack-to"> ➞ </span><span class="stack-after">..., obj</span></span></div>
 				</div>
 			</li>
@@ -866,7 +874,7 @@ bind(window, "load", init);</script>
 			</li>
 			<li class="instruction-item">
 				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0x65</span> <strong class="instruction-name">getscopeobject</strong> scopeIndex(U30)</div>
-				<div class="short-description">Get scope object</div>
+				<div class="short-description">Get scope object from local scope stack</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">...</span><span class="stack-to"> ➞ </span><span class="stack-after">..., obj</span></span></div>
 				</div>
 			</li>
@@ -1252,7 +1260,7 @@ bind(window, "load", init);</script>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction instruction-flag-noFlashPlayer instruction-flag-es4NumericsMinor"><div class="instruction-signature"><span class="instruction-code">0x8F</span> <strong class="instruction-name">negate_p</strong> operand1:numberContext(U30)</div>
+				<div class="instruction instruction-flag-noFlashPlayer instruction-flag-es4NumericsMinor"><div class="instruction-signature"><span class="instruction-code">0x8F</span> <strong class="instruction-name">negate_p</strong> numberContext(U30)</div>
 				<div class="short-description">Negate value using number context</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">..., value</span><span class="stack-to"> ➞ </span><span class="stack-after">..., -value</span></span></div>
 				<strong class="flags-title">Flags: </strong><br />
@@ -1356,13 +1364,14 @@ bind(window, "load", init);</script>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction instruction-flag-undocumented instruction-flag-unknownStack"><div class="instruction-signature"><span class="instruction-code">0x22</span> <strong class="instruction-name">pushconstant</strong> value:U30</div>
+				<div class="instruction instruction-flag-undocumented instruction-flag-unknownStack instruction-flag-noFlashPlayer"><div class="instruction-signature"><span class="instruction-code">0x22</span> <strong class="instruction-name">pushconstant</strong> value:U30</div>
 				<div class="short-description">Push constant value on stack</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values  unknown">???</span></div>
 				<strong class="flags-title">Flags: </strong><br />
 				<ul class="flags">
 					<li class="flag flag-undocumented">Undocumented</li>
 					<li class="flag flag-unknownStack">Unknown stack</li>
+					<li class="flag flag-noFlashPlayer">Not in standard Flash Player</li>
 				</ul>
 				</div>
 			</li>
@@ -1378,12 +1387,11 @@ bind(window, "load", init);</script>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction instruction-flag-noFlashPlayer instruction-flag-es4NumericsMinor instruction-flag-unknownStack"><div class="instruction-signature"><span class="instruction-code">0x34</span> <strong class="instruction-name">pushdnan</strong></div>
+				<div class="instruction instruction-flag-noFlashPlayer instruction-flag-es4NumericsMinor"><div class="instruction-signature"><span class="instruction-code">0x34</span> <strong class="instruction-name">pushdnan</strong></div>
 				<div class="short-description">Push decimal NaN value on the stack</div>
-				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values  unknown">???</span></div>
+				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">...</span><span class="stack-to"> ➞ </span><span class="stack-after">..., decimalNaN</span></span></div>
 				<strong class="flags-title">Flags: </strong><br />
 				<ul class="flags">
-					<li class="flag flag-unknownStack">Unknown stack</li>
 					<li class="flag flag-es4NumericsMinor">ES4 numerics (ABC minor 17)</li>
 					<li class="flag flag-noFlashPlayer">Not in standard Flash Player</li>
 				</ul>
@@ -1534,25 +1542,25 @@ bind(window, "load", init);</script>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD4</span> <strong class="instruction-name">setlocal_0</strong></div>
+				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD4</span> <strong class="instruction-name">setlocal0</strong></div>
 				<div class="short-description">Set local register 0</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">..., value</span><span class="stack-to"> ➞ </span><span class="stack-after">...</span></span></div>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD5</span> <strong class="instruction-name">setlocal_1</strong></div>
+				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD5</span> <strong class="instruction-name">setlocal1</strong></div>
 				<div class="short-description">Set local register 1</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">..., value</span><span class="stack-to"> ➞ </span><span class="stack-after">...</span></span></div>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD6</span> <strong class="instruction-name">setlocal_2</strong></div>
+				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD6</span> <strong class="instruction-name">setlocal2</strong></div>
 				<div class="short-description">Set local register 2</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">..., value</span><span class="stack-to"> ➞ </span><span class="stack-after">...</span></span></div>
 				</div>
 			</li>
 			<li class="instruction-item">
-				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD7</span> <strong class="instruction-name">setlocal_3</strong></div>
+				<div class="instruction"><div class="instruction-signature"><span class="instruction-code">0xD7</span> <strong class="instruction-name">setlocal3</strong></div>
 				<div class="short-description">Set local register 3</div>
 				<div class="stack"><strong class="stack-title">Stack: </strong><span class="stack-values "><span class="stack-before">..., value</span><span class="stack-to"> ➞ </span><span class="stack-after">...</span></span></div>
 				</div>
